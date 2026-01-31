@@ -27,20 +27,20 @@ pipeline {
         stage('Remove Old Image') {
             steps {
                 sh '''
-                docker rmi guru || true
+                docker rmi amazon || true
                 '''
             }
         }
 
         stage('Docker Image Build') {
             steps {
-                sh 'docker build -t reddy .'
+                sh 'docker build -t amazon .'
             }
         }
 
         stage('Docker Deploy') {
             steps {
-                sh 'docker run -d -p 3124:8080 --name webapp reddy'
+                sh 'docker run -d -p 6060:8080 --name azure amazon'
             }
         }
     }
