@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone') {
             steps {
-                git ''
+                git 'https://github.com/prashanthreddy2004/k-tomat.git'
             }
         }
 
